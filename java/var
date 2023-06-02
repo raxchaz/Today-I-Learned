@@ -1,5 +1,12 @@
-### 문자 리터럴
-
-#### '\n' 리터럴
-- Carriage Return, 리턴 용도
-- 
+public class Main {
+    public static void main(String[] args) {
+        System.out.print("Loading");
+        try {
+            Thread.sleep(1000); // 1초 대기
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.print("\r"); // 캐리지 리턴
+        System.out.print("Completed");
+    }
+}
