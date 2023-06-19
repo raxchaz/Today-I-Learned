@@ -1,9 +1,12 @@
-## TiL rachaz, 230620 
+## TiL of RaChaz 
 
-### 1. 어제 진도 복습 
-- AoP란 무엇인가?
+<div align="left">
+	<img src="https://img.shields.io/badge/Velog-20C997?style=flat&logo=Velog&logoColor=white" />
+</div>
+
+## Spring
 
 
 
-### 2. 오늘 진도 복습
+
 
