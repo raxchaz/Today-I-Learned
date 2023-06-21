@@ -1,0 +1,56 @@
+
+Chap01 - request - mapping - lecture - source
+
+Added Dendencies
+- Spring Web
+- Thymeleaf
+- Spring Boot DevTools
+
+
+DispatcherServlet 
+- Spring MVC 웹 어플리케이션에서 요청을 처리하는 주요 컴포넌트
+- 웹 어플리케이션으로 들어오는 요청을 받아 적절한 컨트롤러에게 전달하고, 
+  컨트롤러가 요청을 처리한 후에는 응답을 생성하여 클라이언트에게 반환한다.
+  
+  ```
+  <head>
+        <meta charset="UTF-8">
+         <title>Title</title>
+  </head>
+  <body>
+        <h1>Spring Request Mapping 테스트</h1>
+        <h2>1. 메소드에 요청 매핑하기</h2>
+        <h3>GET : /menu/regist</h3>
+        <button onclick="location.href='/menu/regist'">GET 메뉴 등록 요청</button>
+ </body>
+ </html>
+ ```
+ 
+ <h3>GET : /menu/regist</h3>
+ => HTTP GET 요청을 통해 "/menu/regist" 경로에 접근하려는 것!
+ => GET = 서버로부터 정보를 '요청하기 위한' 메서드
+ 
+ ---------------------------------------------------------------------------------------
+ 
+ 
+ @Bean으로 설정해주기 위해서 @Controller 삽입
+ 
+ @RequestMapping : 특정 URL 경로에 대한 요청을 처리할 메서드를 매핑하기 위해 사용
+ ex|class ver.)  @RequestMapping("/menu") 이것은 /menu 경로에 대한 모든 요청을 해당 클래스의 메서드들이 처리하도록 매핑
+ 
+ ex2 | method ver.) @RequestMapping(value = "/regist", method = RequestMethod.GET)
+ : 해당 메서드가 특정 URL 경로에 대한 요청을 처리하도록 매핑
+ : 위의 예시는 "/regist" 경로에 대한 HTTP GET 요청을 해당 메서드가 처리하도록 매핑
+ 
+ == 
+ @RequestMapping 어노테이션에는 다양한 속성을 사용하여 추가적인 매핑 설정을 할 수 있다.
+
+1. value 또는 path: 요청 경로를 지정합니다.
+2. method: 요청 메서드를 지정합니다. 기본적으로 GET, POST 등 모든 요청 메서드에 매핑됩니다.
+3. params: 특정 요청 매개변수의 존재 여부 또는 값을 지정하여 요청을 매핑합니다.
+4. headers: 특정 요청 헤더의 존재 여부 또는 값을 지정하여 요청을 매핑합니다.
+5. consumes: 요청이 지원해야 하는 미디어 타입을 지정합니다.
+6. produces: 응답으로 생성해야 하는 미디어 타입을 지정합니다.
+ 
+ 
+ 
