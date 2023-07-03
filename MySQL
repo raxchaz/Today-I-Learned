@@ -18,3 +18,35 @@ FROM
 
 01. ORDER_BY
 = 결과 집합을 특정 열이나 열들의 값에 따라 정렬하는 데 사용
+= ASC : 오름차순
+= DESC : 내림차순
+= FIELD : 맨 왼쪽의 값이 2번째 인자 이후의 값과 일치하면 해당 위치 값을 반환함
+ex) SELECT FIELD('A', 'A', 'B', 'C'); => 2 반환
+
+
+02. WHERE
+= 특정 조건에 맞는 레코드만을 선택하는 데 사
+SELECT 
+    menu_name, 
+    menu_price, 
+    orderable_status
+FROM
+    tbl_menu
+WHERE
+    orderable_status = 'Y';
+
+
+02-1. AND 연산자
+0 반환 : 0이거나 NULL이 아닌 값들일 경우
+1 반환 : 하나라도 0이거나 둘 다 0일 경우
+NULL 반환 : 0이 아닌 값과 NULL // 둘 다 NULL일 경우
+0이면 FALSE, 0이 아니면 TRUE, NULL은 NULL
+
+
+02-2. OR 연산자
+0 반환 : 둘 다 0일 경우
+1 반환 : 둘 다 NULL이 아니면서 + 하나라도 0이 아닌 값이 있을 경우
+NULL 반환 : 1을 제외한 값들 중 하나라도 NULL이거나 둘 다 NULL일 경우
+0이면 FALSE, 0이 아니라면 TRUE, NULL은 NULL
+
+
