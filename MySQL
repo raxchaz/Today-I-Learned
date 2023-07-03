@@ -49,4 +49,54 @@ NULL 반환 : 0이 아닌 값과 NULL // 둘 다 NULL일 경우
 NULL 반환 : 1을 제외한 값들 중 하나라도 NULL이거나 둘 다 NULL일 경우
 0이면 FALSE, 0이 아니라면 TRUE, NULL은 NULL
 
+우선순위 :  AND >>> OR
+우선순위를 높이고 싶다면 소괄호를 사용하면 된다.
+
+
+03. BETWEEN
+SELECT 
+    menu_name, 
+    menu_price, 
+    category_code
+FROM
+    tbl_menu
+WHERE
+    menu_price BETWEEN 10000 AND 25000
+ORDER BY 
+    menu_price;
+부정을 하고싶을 경우에는, NOT BETWEEN이라고 표기
+
+
+04. LIKE 연산자 
+= 해당 문구가 포함되어있는 부분을 찾아준다!
+부정하고 싶다면, NOT LIKE로 기재하면 된다. 
+SELECT 
+    menu_name, 
+    menu_price
+FROM
+    tbl_menu
+WHERE
+    menu_name LIKE '%마늘%'
+ORDER BY 
+    menu_name;
+
+
+05. IN 연산자
+= LIKE과 마찬가지로 포함되어있는 부분을 보여준다.
+SELECT 
+    menu_name,
+    category_code
+FROM
+    tbl_menu
+WHERE
+    category_code IN (4, 5, 6)
+ORDER BY 
+    category_code;
+
+
+06. DISTINCT
+= 중복된 값을 제거하는 데 사용된다.
+- 단일열과 다중열(다중열이 모두 동일하면 중복이라고 판단)이 존재!
+
+
 
